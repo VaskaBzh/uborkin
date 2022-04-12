@@ -1,0 +1,34 @@
+{
+  "name": "uborkin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VaskaBzh/uborkin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VaskaBzh/uborkin/issues"
+  },
+  "homepage": "https://github.com/VaskaBzh/uborkin#readme",
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "download": "^8.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-html-minify": "^0.0.14",
+    "gulp-js-minify": "^0.0.3",
+    "gulp-tinypng-compress": "^1.2.5",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.49.8"
+  }
+}
