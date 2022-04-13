@@ -353,17 +353,17 @@ template {
 }
 
 .button {
-  font-size: 1.56rem;
+  font-size: 1.63rem;
   max-width: 19.72rem;
   width: 100%;
   font-weight: 700;
-  padding: 19px 0;
+  padding: 17px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   outline: none;
-  border-radius: 50px;
+  border-radius: 15px;
   cursor: pointer;
 }
 .button_primary {
@@ -477,6 +477,7 @@ img {
   letter-spacing: -1px;
 }
 .header .nav__link:nth-child(3) {
+  letter-spacing: -1px;
   margin-left: -1rem;
 }
 .header .contacts {
@@ -494,8 +495,9 @@ img {
 .header .contacts__phone {
   text-decoration: none;
   color: #052241;
-  font-size: 1.333rem;
+  font-size: 1.3rem;
   font-style: italic;
+  font-weight: 700;
 }
 .header .contacts__messenger {
   max-width: 7.67rem;
@@ -505,34 +507,43 @@ img {
 .hero {
   background: #D6E4EC url(../img/house.webp) center no-repeat;
   position: relative;
+  margin-left: -3px;
+  min-height: 630px;
 }
 .hero .col {
   align-items: flex-start;
 }
 .hero .container {
+  max-width: 1162px;
+  min-height: 615px;
   position: relative;
+  background: transparent url(../img/trashcans.webp) bottom right no-repeat;
 }
 .hero .container::before {
   content: url(../img/bush-left.webp);
   position: absolute;
-  left: 0;
-  top: 0;
-  display: none;
+  left: -376px;
+  bottom: -167px;
+  background-size: 622px 369px;
 }
 .hero .container::after {
   content: url(../img/bush-right.webp);
   position: absolute;
-  left: 0;
-  top: 0;
-  display: none;
+  right: -323px;
+  bottom: -167px;
+  background-size: 523px 366px;
 }
 .hero__title {
   max-width: 29.89rem;
   width: 100%;
+  font-size: 1.89rem;
+  line-height: 43px;
 }
 .hero__text {
   max-width: 26.94rem;
   width: 100%;
+  margin: 43px 0 54px;
+  font-size: 1.33rem;
 }
 
 @media screen and (max-width: 1200px) {
