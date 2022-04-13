@@ -5,74 +5,18 @@
 h1
     margin: 0
 html
-    font-size: 14px 
+    font-size: 18px 
 body
-    font-family: 'Roboto', sans-serif
+    font-family: 'gilroy'
     font-size: 1rem
-    color: $black
+    color: $dark
     outline: none
+    font-weight: 500
 img
     max-width: 100% 
 .section
-    padding: 8.571rem 0
-.title
-    display: flex
-    flex-direction: column
-    align-items: center
-    &__head
-        color: $black
-        font-size: 2.571rem
-        font-weight: 300
-        line-height: 3rem
-        text-align: center
-        &-words
-            font-weight: 700
+    padding: 1.94rem 0
+    &__title
+        font-size: 2.67rem
     &__text
-        font-size: 1.143rem
-        font-weight: 300
-        text-align: center
-        line-height: 1.714rem
-    &--left
-        flex-direction: column
-        align-items: left
-        justify-content: flex-start
-        text-align-last: left
-.video
-    max-width: 67.5rem
-    width: 100%
-    min-height: 27.643rem
-    margin: auto
-    position: relative
-    &__btn
-        position: absolute
-        width: 64px
-        height: 64px
-        left: 50%
-        top: 50%
-        margin-top: -32px
-        margin-left: -32px
-
-#button
-    display: inline-block
-    background: $light url('../img/arrow-up.svg') no-repeat center
-    width: 50px
-    height: 50px
-    text-align: center
-    border: 1px solid $primary
-    border-radius: 50%
-    position: fixed
-    bottom: 30px
-    right: 30px
-    transition: all .5s
-    opacity: 0
-    visibility: hidden
-    z-index: 1000
-    &::after
-        content: ''
-        color: #fff
-    &:hover
-        cursor: pointer
-        background-color: lighten($secondary, 10%)
-    &.show
-        opacity: 1
-        visibility: visible
+        font-size: 1rem
