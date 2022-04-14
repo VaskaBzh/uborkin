@@ -357,7 +357,7 @@ template {
   max-width: 19.72rem;
   width: 100%;
   font-weight: 700;
-  padding: 17px 0;
+  padding: 11px 0 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -367,7 +367,7 @@ template {
   cursor: pointer;
 }
 .button_primary {
-  background: #f8d21f;
+  background: linear-gradient(0deg, #f8d21f 0%, #f8e89f 100%);
 }
 
 .container {
@@ -398,6 +398,13 @@ template {
 .col-30 {
   flex-basis: 29%;
 }
+.col__head {
+  font-size: 1.753rem;
+  line-height: 1.44rem;
+  text-decoration: underline;
+  color: #052241;
+  font-family: "gilroy";
+}
 
 .center {
   display: flex;
@@ -425,6 +432,7 @@ body {
   color: #052241;
   outline: none;
   font-weight: 500;
+  line-height: 1.4rem;
 }
 
 img {
@@ -436,9 +444,17 @@ img {
 }
 .section__title {
   font-size: 2.67rem;
+  line-height: 2.67rem;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
 }
 .section__text {
   font-size: 1rem;
+  text-align: center;
+  line-height: 1.56rem;
+  font-weight: 700;
+  font-family: "gilroy";
 }
 
 .header {
@@ -468,16 +484,15 @@ img {
   text-decoration: none;
   color: #052241;
   font-style: italic;
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   letter-spacing: 0px;
+  line-height: 1.35rem;
+  font-family: "Oswald", sans-serif;
 }
 .header .nav__link:nth-child(2) {
-  margin-left: 1.2rem;
-  letter-spacing: -1px;
+  margin-left: 0.9rem;
 }
 .header .nav__link:nth-child(3) {
-  letter-spacing: -1px;
   margin-left: -1rem;
 }
 .header .contacts {
@@ -487,6 +502,7 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-right: 1px;
 }
 .header .contacts__elem {
   max-width: 30px;
@@ -495,9 +511,13 @@ img {
 .header .contacts__phone {
   text-decoration: none;
   color: #052241;
+  line-height: 1.3rem;
   font-size: 1.3rem;
   font-style: italic;
-  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04rem;
+  margin: -1px 0 6px;
 }
 .header .contacts__messenger {
   max-width: 7.67rem;
@@ -505,17 +525,26 @@ img {
 }
 
 .hero {
-  background: #D6E4EC url(../img/house.webp) center no-repeat;
+  background: #D6E4EC url(../img/house.webp) 35% 46% no-repeat;
+  background-size: 72% 128%;
   position: relative;
-  margin-left: -3px;
+  margin-left: -6px;
   min-height: 630px;
+  padding-top: 1.593rem;
+}
+.hero::before {
+  content: url(../img/clouds.webp);
+  position: absolute;
+  left: -22px;
+  bottom: -206px;
+  z-index: 99;
 }
 .hero .col {
   align-items: flex-start;
 }
 .hero .container {
   max-width: 1162px;
-  min-height: 615px;
+  min-height: 621px;
   position: relative;
   background: transparent url(../img/trashcans.webp) bottom right no-repeat;
 }
@@ -523,27 +552,128 @@ img {
   content: url(../img/bush-left.webp);
   position: absolute;
   left: -376px;
-  bottom: -167px;
+  bottom: -182px;
   background-size: 622px 369px;
 }
 .hero .container::after {
   content: url(../img/bush-right.webp);
   position: absolute;
-  right: -323px;
-  bottom: -167px;
+  right: -333px;
+  bottom: -181px;
   background-size: 523px 366px;
 }
 .hero__title {
-  max-width: 29.89rem;
+  max-width: 30.89rem;
   width: 100%;
-  font-size: 1.89rem;
+  font-size: 1.94rem;
   line-height: 43px;
+  line-height: 2.67rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
 }
 .hero__text {
   max-width: 26.94rem;
   width: 100%;
-  margin: 43px 0 54px;
+  letter-spacing: 0.0358rem;
+  margin: 37px 0 54px;
   font-size: 1.33rem;
+}
+
+.catalog {
+  background: transparent url(../img/clouds-upsidedown.webp) center bottom no-repeat;
+  z-index: 99;
+  position: relative;
+  padding-top: 2.15rem;
+  padding-bottom: 1.6rem;
+}
+.catalog .container {
+  max-width: 1324px;
+}
+.catalog__title {
+  margin-bottom: 3.55rem;
+}
+.catalog .metalbins {
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 3.09rem;
+}
+.catalog .metalbins__head {
+  margin-bottom: 2rem;
+}
+.catalog .plasticbins {
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.catalog .plasticbins__head {
+  margin-bottom: 2rem;
+}
+.catalog .plasticbins__title {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2.67rem;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+.catalog .plasticbins__block {
+  margin-bottom: 3.89rem;
+}
+.catalog .plasticbins__block:nth-child(3) img {
+  margin-left: -18px;
+}
+.catalog .plasticbins__block:nth-child(3) a {
+  margin-left: -8px;
+}
+.catalog .plasticbins__block:nth-child(2) a {
+  margin-bottom: 3.75rem;
+}
+.catalog .plasticbins__block:nth-child(2) img {
+  margin-left: 7px;
+}
+.catalog .plasticbins__block:nth-child(4) img {
+  margin-left: -6px;
+}
+.catalog .plasticbins__block:nth-child(4) a {
+  margin-bottom: 2.35rem;
+  margin-left: -15px;
+}
+.catalog .plasticbins__block:nth-child(5) img {
+  margin-left: -17px;
+}
+.catalog .plasticbins__block:nth-child(5) a {
+  margin-bottom: 2.35rem;
+}
+
+.profile {
+  background: url(../img/houses.webp) no-repeat 20% -2%, #D6E4EC url(../img/clouds.webp) no-repeat center 147%;
+  padding-top: 68px;
+  margin-top: -95px;
+}
+.profile .container {
+  max-width: 1111px;
+  z-index: 999;
+  position: relative;
+}
+.profile__title {
+  letter-spacing: 0.07rem;
+  margin-bottom: 1.94rem;
+}
+.profile__block {
+  background: rgba(222, 234, 245, 0.2);
+  box-shadow: -2px 13px 124px 12px rgba(131, 131, 131, 0.91);
+  border-radius: 7px;
+  margin-bottom: 2.56rem;
+  width: 100%;
+}
+.profile__block:nth-child(2) {
+  padding: 18px 41px 41px 33px;
+}
+.profile__block:nth-child(3) {
+  padding: 15px 13px 22px 4px;
+}
+.profile__text {
+  letter-spacing: 0.021rem;
 }
 
 @media screen and (max-width: 1200px) {

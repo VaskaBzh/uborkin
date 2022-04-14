@@ -1,34 +1,46 @@
 .hero
-    background: $back url(../img/house.webp) center no-repeat
+    background: $back url(../img/house.webp) 35% 46% no-repeat
+    background-size: 72% 128%
     position: relative
-    margin-left: -3px
+    margin-left: -6px
     min-height: 630px
+    padding-top: 1.593rem
+    &::before
+        content: url(../img/clouds.webp)
+        position: absolute
+        left: -22px
+        bottom: -206px
+        z-index: 99
     .col
         align-items: flex-start
     .container
         max-width: 1162px
-        min-height: 615px
+        min-height: 621px
         position: relative
         background: transparent url(../img/trashcans.webp) bottom right no-repeat
         &::before
             content: url(../img/bush-left.webp)
             position: absolute
             left: -376px
-            bottom: -167px
+            bottom: -182px
             background-size: 622px 369px
         &::after
             content: url(../img/bush-right.webp)
             position: absolute
-            right: -323px
-            bottom: -167px
+            right: -333px
+            bottom: -181px
             background-size: 523px 366px
     &__title
-        max-width: 29.89rem
+        max-width: 30.89rem
         width: 100%
-        font-size: 1.89rem
+        font-size: 1.94rem
         line-height: 43px
+        line-height: 2.67rem
+        font-family: 'Oswald', sans-serif
+        text-transform: uppercase
     &__text
         max-width: 26.94rem
         width: 100%
-        margin: 43px 0 54px
+        letter-spacing: 0.0358rem
+        margin: 37px 0 54px
         font-size: 1.33rem
