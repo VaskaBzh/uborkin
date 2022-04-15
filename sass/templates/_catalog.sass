@@ -1,8 +1,10 @@
 .catalog
-    background: transparent url(../img/clouds-upsidedown.webp) center bottom no-repeat
+    margin-top: -7rem
+    background: url(../img/clouds.webp) no-repeat center 0%, transparent url(../img/clouds-upsidedown.webp) center bottom no-repeat
     z-index: 99
+    background-size: 100%
     position: relative  
-    padding-top: 2.15rem
+    padding-top: 9.15rem
     padding-bottom: 1.6rem
     .container
         max-width: 1324px
@@ -12,6 +14,11 @@
         width: 100%
         justify-content: space-around
         margin-bottom: 3.09rem
+        &__block
+            & img
+                transition-duration: 400ms
+                &:hover
+                    transform: scale(1.05)
         &__head
             margin-bottom: 2rem
     .plasticbins
@@ -29,6 +36,10 @@
             margin-bottom: 2.5rem
         &__block
             margin-bottom: 3.89rem
+            & img
+                transition-duration: 400ms
+                &:hover
+                    transform: scale(1.05)
             &:nth-child(3)
                 & img
                     margin-left: -18px   

@@ -5,12 +5,6 @@
     margin-left: -6px
     min-height: 630px
     padding-top: 1.593rem
-    &::before
-        content: url(../img/clouds.webp)
-        position: absolute
-        left: -22px
-        bottom: -206px
-        z-index: 99
     .col
         align-items: flex-start
     .container
@@ -19,17 +13,25 @@
         position: relative
         background: transparent url(../img/trashcans.webp) bottom right no-repeat
         &::before
-            content: url(../img/bush-left.webp)
+            content: ''
+            background: url(../img/bush-left.webp) no-repeat center
             position: absolute
-            left: -376px
-            bottom: -182px
-            background-size: 622px 369px
+            left: -32%
+            bottom: -29%
+            max-width: 622px
+            width: 100%
+            min-height: 369px
+            background-size: 100%
         &::after
-            content: url(../img/bush-right.webp)
+            content: ''
+            background: url(../img/bush-right.webp) no-repeat center
             position: absolute
-            right: -333px
-            bottom: -181px
-            background-size: 523px 366px
+            right: -29%
+            bottom: -29%
+            max-width: 523px
+            width: 100%
+            min-height: 366px
+            background-size: 100%
     &__title
         max-width: 30.89rem
         width: 100%
@@ -38,9 +40,15 @@
         line-height: 2.67rem
         font-family: 'Oswald', sans-serif
         text-transform: uppercase
+        text-align: left
     &__text
-        max-width: 26.94rem
+        max-width: 27.94rem
         width: 100%
         letter-spacing: 0.0358rem
-        margin: 37px 0 54px
+        margin: 33px 0 54px
         font-size: 1.33rem
+        text-align: left
+        line-height: 1.5rem
+.mobile
+    &_on
+        display: none
