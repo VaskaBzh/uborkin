@@ -19,6 +19,10 @@
         border-radius: 8px
         position: relative
         overflow: hidden
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: flex-start
         .cross
             position: absolute
             right: -32px
@@ -44,6 +48,8 @@
         display: flex
         flex-direction: column
         align-items: center
+        padding-bottom: 1rem
+        border-bottom: 1px solid rgba($dark, 0.2)
     &__input
         width: 350px
         height: 70px
@@ -60,6 +66,61 @@
         line-height: 1.33rem
         &:placeholder
             color: #92979e
+    &__button
+        padding: 15px 0 21px
+        margin-bottom: 0.8rem
+    &__check
+        position: absolute
+        z-index: -1
+        opacity: 0
+        &:checked
+            &+label
+                &::before
+                    background-image: url(../img/tick.webp)
+        &+label
+            display: inline-flex
+            align-items: center
+            user-select: none
+            &::before
+                content: ''
+                display: inline-block
+                width: 16px
+                height: 16px
+                flex-shrink: 0
+                flex-grow: 0
+                border: 1px solid $dark
+                margin-right: 0.8rem
+                background-repeat: no-repeat
+                background-position: center center
+                background-size: 100% 100%
+    label
+        font-weight: 700
+        font-family: 'gilroy'
+        font-size: 0.81rem
+        line-height: 1.33rem
+        color: $dark
+        margin-left: -0.8rem
+    &__phone
+        font-size: 1.43rem
+        line-height: 1.33rem
+        font-weight: 700
+        font-family: 'Oswald', sans-serif
+        margin: -0.5rem auto 0.9rem auto
+    &__head
+        font-family: 'Oswald', sans-serif
+        font-weight: 600
+        font-size: 1rem
+        line-height: 1.33rem
+        text-transform: uppercase
+        font-style: italic
+    &__schedule
+        font-family: 'Oswald', sans-serif
+        font-size: 0.67rem
+        font-style: italic
+        text-transform: uppercase
+        line-height: 0.77rem
+        max-width: 32%
+        text-align: center
 .back
     width: 100%
     height: 100vh
