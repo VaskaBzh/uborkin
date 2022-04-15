@@ -10,6 +10,7 @@
     margin-left: -242px
     background: $light
     border-radius: 8px
+    z-index: 9999
     &__container
         max-width: 462px
         max-height: 690px
@@ -18,9 +19,8 @@
         border: 3px solid rgba($dark, 0.2)
         border-radius: 8px
         position: relative
-        &::after
-            content: ''
-            background: transparent url(../img/cross.svg) no-repeat center
+        overflow: hidden
+        .cross
             position: absolute
             right: -32px
             top: -21px
@@ -70,7 +70,9 @@
     top: 0
     display: none
     overflow: hidden
-    z-index: 9999
+    z-index: 1111
 .show
     display: block
-    overflow: visible
+    overflow: scroll
+.no-scroll
+    overflow: hidden

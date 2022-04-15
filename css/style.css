@@ -935,6 +935,7 @@ img {
   margin-left: -242px;
   background: #fff;
   border-radius: 8px;
+  z-index: 9999;
 }
 .modal__container {
   max-width: 462px;
@@ -944,10 +945,9 @@ img {
   border: 3px solid rgba(5, 34, 65, 0.2);
   border-radius: 8px;
   position: relative;
+  overflow: hidden;
 }
-.modal__container::after {
-  content: "";
-  background: transparent url(../img/cross.svg) no-repeat center;
+.modal__container .cross {
   position: absolute;
   right: -32px;
   top: -21px;
@@ -1004,12 +1004,16 @@ img {
   top: 0;
   display: none;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 1111;
 }
 
 .show {
   display: block;
-  overflow: visible;
+  overflow: scroll;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1900px) {
