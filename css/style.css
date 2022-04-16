@@ -367,11 +367,12 @@ template {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition: background 0.5s easy 0s;
 }
 .button_primary {
   background: linear-gradient(0deg, #f8d21f 0%, #f8e89f 100%);
 }
-.button_primary:hover {
+.button:hover {
   background: linear-gradient(0deg, #f69100 0%, #f8de66 100%);
   box-shadow: 0px 2px 0px 0px #f09e00;
 }
@@ -944,7 +945,6 @@ img {
   border: 3px solid rgba(5, 34, 65, 0.2);
   border-radius: 8px;
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -980,9 +980,11 @@ img {
   align-items: center;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(5, 34, 65, 0.2);
+  max-width: 350px;
+  width: 100%;
 }
 .modal__input {
-  width: 350px;
+  width: 100%;
   height: 70px;
   background-color: #f4f4f4;
   box-shadow: inset 0px 5px 7px 0px rgba(5, 34, 65, 0.02);
@@ -999,6 +1001,12 @@ img {
 .modal__input:placeholder {
   color: #92979e;
 }
+.modal__input._error {
+  box-shadow: 0 0 15px red;
+}
+.modal__input:focus {
+  box-shadow: 0 0 15px #5e942d;
+}
 .modal__button {
   padding: 15px 0 21px;
   margin-bottom: 0.8rem;
@@ -1007,6 +1015,9 @@ img {
   position: absolute;
   z-index: -1;
   opacity: 0;
+}
+.modal__check._error + label::before {
+  box-shadow: 0 0 15px red;
 }
 .modal__check:checked + label::before {
   background-image: url(../img/tick.webp);
@@ -1316,11 +1327,75 @@ img {
     font-size: 10px;
   }
 
+  .modal {
+    max-height: 505px;
+    max-width: 85%;
+    margin-left: -45%;
+    margin-top: -80%;
+  }
+  .modal__container {
+    max-height: 100%;
+  }
+  .modal__input {
+    width: 90%;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+  .modal__schedule {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    max-width: 59%;
+  }
+  .modal__head {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .modal__phone {
+    margin-top: -1rem;
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+  }
+  .modal__button {
+    max-width: 90%;
+    font-size: 2rem;
+    margin-top: 1rem;
+    padding: 12px 0 14px;
+    margin-bottom: 1.8rem;
+  }
+  .modal label {
+    font-size: 1rem;
+    margin-left: 0.3rem;
+  }
+  .modal label::before {
+    width: 11px;
+    height: 11px;
+    margin-right: 0.1rem;
+  }
+  .modal .cross {
+    width: 14px;
+    height: 14px;
+    right: -16px;
+  }
+  .modal__title {
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
+  }
+  .modal__message {
+    letter-spacing: 0.025em;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.8rem;
+  }
+
   .header .contacts__elem {
     max-width: 15px;
     min-height: 15px;
   }
 
+  .hero {
+    overflow-x: hidden;
+  }
   .hero .container {
     background: transparent url(../img/trashcans.webp) 55% 69% no-repeat;
     background-size: 56%;

@@ -13,11 +13,12 @@
     cursor: pointer
     position: relative
     overflow: hidden
+    transition: background 0.5s easy 0s
     &_primary
         background: linear-gradient(0.0deg, $primary 0%, #f8e89f 100%)
-        &:hover
-            background: linear-gradient(0.0deg, #f69100 0%, #f8de66 100%)
-            box-shadow: 0px 2px 0px 0px #f09e00
+    &:hover
+        background: linear-gradient(0.0deg, #f69100 0%, #f8de66 100%)
+        box-shadow: 0px 2px 0px 0px #f09e00
     &::after 
         content: ""
         display: block

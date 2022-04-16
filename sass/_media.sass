@@ -164,12 +164,61 @@
 @media screen and ( max-width: 425px )
     html 
         font-size: 10px
+    .modal
+        max-height: 505px
+        max-width: 85%
+        margin-left: -45%
+        margin-top: -80%
+        &__container
+            max-height: 100%
+        &__input 
+            width: 90%
+            height: 50px
+            font-size: 1.25rem
+        &__schedule
+            font-size: 1.3rem
+            line-height: 1.3rem
+            max-width: 59%
+        &__head
+            font-size: 2rem
+            margin-bottom: 1rem
+        &__phone
+            margin-top: -1rem
+            font-size: 2.6rem
+            margin-bottom: 2rem
+        &__button
+            max-width: 90%
+            font-size: 2rem
+            margin-top: 1rem
+            padding: 12px 0 14px
+            margin-bottom: 1.8rem
+        label
+            font-size: 1rem
+            margin-left: 0.3rem
+            &::before
+                width: 11px
+                height: 11px
+                margin-right: 0.1rem
+        .cross
+            width: 14px
+            height: 14px
+            right: -16px
+        &__title
+            font-size: 1.5rem
+            letter-spacing: 0.03em
+        &__message
+            letter-spacing: 0.025em 
+            font-size: 1.2rem
+            margin-top: 2rem
+            line-height: 1.5rem
+            margin-bottom: 1.8rem
     .header
         .contacts
             &__elem
                 max-width: 15px
                 min-height: 15px
     .hero
+        overflow-x: hidden
         .container   
             background: transparent url(../img/trashcans.webp) 55% 69% no-repeat   
             background-size: 56%    

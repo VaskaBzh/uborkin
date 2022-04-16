@@ -192,19 +192,19 @@
         <!-- /.container -->
     </footer>
     <!-- /.footer section -->
-    <div class="back">
+    <div class="back" id="get">
         <div class="modal">
             <div class="modal__container">
-                <img src="../img/cross.svg" alt="" class="cross">
-                <h2 class="modal__title">подобрать мусорный контейнер</h2>
+                <img src="../img/cross.svg" alt="" class="cross two">
+                <h2 class="modal__title">заказать мусорный контейнер</h2>
                 <p class="modal__message">Заявка Вас ни к чему не обязывает.<br>
                     Менеджер перезвонит Вам для подтверждения заказа</p>
-                <form action="send.php" class="modal__form">
-                    <input id="text" type="text" class="modal__input" placeholder="Введите Ваше имя">
-                    <input id="tel" type="tel" class="modal__input" placeholder="Введите Ваш телефон">
-                    <button class="button button_primary modal__button">Подобрать контейнер</button>
-                    <input id="check" type="checkbox" class="modal__check">
-                    <label for="check">Я принимаю условия предачи информации</label>
+                <form action="#" class="modal__form" id="formGet">
+                    <input id="text" name="nameGet" type="text" class="modal__input _req" placeholder="Введите Ваше имя">
+                    <input id="tel" name="telGet" type="tel" class="modal__input _req _tel" placeholder="Введите Ваш телефон">
+                    <button class="button button_primary modal__button">Перезвоните мне</button>
+                    <input id="checkGet" type="checkbox" class="modal__check _req">
+                    <label for="checkGet">Я принимаю условия предачи информации</label>
                 </form>
                 <p class="modal__message">или позвоните прямо сейчас</p>
                 <span class="modal__phone">8 (962) 4-413-513</span>
@@ -215,6 +215,30 @@
         </div>
         <!-- /.modal -->
     </div>
-    <!-- /.back -->
+    <!-- /.back__get -->
+    <div class="back" id="take">
+        <div class="modal">
+            <div class="modal__container">
+                <img src="../img/cross.svg" alt="" class="cross one">
+                <h2 class="modal__title">подобрать мусорный контейнер</h2>
+                <p class="modal__message">Заявка Вас ни к чему не обязывает.<br>
+                    Менеджер перезвонит Вам для подтверждения заказа</p>
+                <form action="#" class="modal__form" id="formTake">
+                    <input id="text" name="nameTake"" type="text" class="modal__input _req" placeholder="Введите Ваше имя">
+                    <input id="tel" name="telTake" type="tel" class="modal__input _req" placeholder="Введите Ваш телефон">
+                    <button class="button button_primary modal__button">Подобрать контейнер</button>
+                    <input id="checkTake" type="checkbox" class="modal__check _req">
+                    <label for="checkTake">Я принимаю условия предачи информации</label>
+                </form>
+                <p class="modal__message">или позвоните прямо сейчас</p>
+                <span class="modal__phone">8 (962) 4-413-513</span>
+                <span class="modal__head">График работы:</span>
+                <span class="modal__schedule">с 9:00 до 19:00
+                    выходной: воскресенье</span>
+            </div>
+        </div>
+        <!-- /.modal -->
+    </div>
+    <!-- /.back__take -->
 </body>
 </html>
