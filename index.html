@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uborkin</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="js/jquery.mask.min.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
-    <script src="./js/main.js" defer></script>
 </head>
 <body>
     <header class="header section">
@@ -199,15 +201,15 @@
                 <h2 class="modal__title">заказать мусорный контейнер</h2>
                 <p class="modal__message">Заявка Вас ни к чему не обязывает.<br>
                     Менеджер перезвонит Вам для подтверждения заказа</p>
-                <form action="#" class="modal__form" id="formGet">
-                    <input id="text" name="nameGet" type="text" class="modal__input _req" placeholder="Введите Ваше имя">
-                    <input id="tel" name="telGet" type="tel" class="modal__input _req _tel" placeholder="Введите Ваш телефон">
+                <form action="#" class="modal__form" id="form-get">
+                    <input id="name-get" name="name" type="text" class="modal__input _req" placeholder="Введите Ваше имя">
+                    <input id="tel-get" name="tel" type="tel" class="modal__input _tel _req" placeholder="Введите Ваш телефон">
                     <button class="button button_primary modal__button">Перезвоните мне</button>
-                    <input id="checkGet" type="checkbox" class="modal__check _req">
-                    <label for="checkGet">Я принимаю условия предачи информации</label>
+                    <input id="check-get" type="checkbox" class="modal__check _req">
+                    <label for="check-get">Я принимаю условия предачи информации</label>
                 </form>
                 <p class="modal__message">или позвоните прямо сейчас</p>
-                <span class="modal__phone">8 (962) 4-413-513</span>
+                <a href="tel:+79624413513" class="modal__phone">8 (962) 4-413-513</a>
                 <span class="modal__head">График работы:</span>
                 <span class="modal__schedule">с 9:00 до 19:00
                     выходной: воскресенье</span>
@@ -215,7 +217,7 @@
         </div>
         <!-- /.modal -->
     </div>
-    <!-- /.back__get -->
+    <!-- /.back -->
     <div class="back" id="take">
         <div class="modal">
             <div class="modal__container">
@@ -223,22 +225,22 @@
                 <h2 class="modal__title">подобрать мусорный контейнер</h2>
                 <p class="modal__message">Заявка Вас ни к чему не обязывает.<br>
                     Менеджер перезвонит Вам для подтверждения заказа</p>
-                <form action="#" class="modal__form" id="formTake">
-                    <input id="text" name="nameTake"" type="text" class="modal__input _req" placeholder="Введите Ваше имя">
-                    <input id="tel" name="telTake" type="tel" class="modal__input _req" placeholder="Введите Ваш телефон">
+                <form method="post" action="#" class="modal__form" id="form-take">
+                    <input id="name" name="name" type="text" class="modal__input _req" placeholder="Введите Ваше имя">
+                    <input id="tel" name="tel" type="tel" class="modal__input _tel _req" placeholder="Введите Ваш телефон">
                     <button class="button button_primary modal__button">Подобрать контейнер</button>
                     <input id="checkTake" type="checkbox" class="modal__check _req">
                     <label for="checkTake">Я принимаю условия предачи информации</label>
                 </form>
                 <p class="modal__message">или позвоните прямо сейчас</p>
-                <span class="modal__phone">8 (962) 4-413-513</span>
+                <a href="tel:+79624413513" class="modal__phone">8 (962) 4-413-513</a>
                 <span class="modal__head">График работы:</span>
                 <span class="modal__schedule">с 9:00 до 19:00
                     выходной: воскресенье</span>
             </div>
-        </div>
+        </div> 
         <!-- /.modal -->
-    </div>
-    <!-- /.back__take -->
+    </div> 
+    <!-- /.back -->
 </body>
 </html>

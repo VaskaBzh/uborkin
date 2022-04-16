@@ -1,5 +1,3 @@
-'use strict'
-
 document.addEventListener("DOMContentLoaded", function(event) {
     const smoothLinks = document.querySelectorAll('.header a[href^="#"]')
     const modalGet = document.getElementById('get')
@@ -9,15 +7,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const modalOpen = document.querySelector('.hero__button')
     const links = document.querySelectorAll('.catalog a')
     const body = document.querySelector('body')
-    const formGet = document.getElementById('formGet')
-    const formTake = document.getElementById('formTake')
+    const formGet = document.getElementById('form-get')
+    const formTake = document.getElementById('form-take')
+    const phones = document.querySelectorAll('._tel')
 
 // валидация форм
 
-// Форма заказа
-    formGet.addEventListener('submit', formSend)
+    $('[type=tel]').mask('+7(000) 000-00-00');
 
-    async function formSend(e) {
+// Форма заказа
+    formGet.addEventListener('submit', formSendGet)
+
+    async function formSendGet(e) {
         e.preventDefault()
         
         let error = formValidate(formGet)
@@ -37,8 +38,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } else {
                 alert('ошибка')
             }
-        } else {
-            alert('Заполните поля')
         }
     }
 
@@ -56,11 +55,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } else if (input.value === '') {
                 formAddError(input)
                 error++
-            } else if (input.classList.contains('_tel')) {
-                if (telTest(input)) {
-                    formAddError(input) 
-                    error++
-                }
             }
         }
     }
@@ -72,14 +66,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         input.parentElement.classList.remove('_error')
         input.classList.remove('_error')
     }
-    function telTest(input) {
-        return /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/
-    }
     
 // Форма подбора
-    formTake.addEventListener('submit', formSend)
+    formTake.addEventListener('submit', formSendTake)
 
-    async function formSend(e) {
+    async function formSendTake(e) {
         e.preventDefault()
         
         let error = formValidate(formTake)
@@ -99,12 +90,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } else {
                 alert('ошибка')
             }
-        } else {
-            alert('Заполните поля')
-        }
+        } 
     }
 
-    function formValidate(formtake) {
+    function formValidate(formTake) {
         let error = 0
         let formReq = document.querySelectorAll('._req')
 
@@ -118,11 +107,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } else if (input.value === '') {
                 formAddError(input)
                 error++
-            } else if (input.classList.contains('_tel')) {
-                if (telTest(input)) {
-                    formAddError(input) 
-                    error++
-                }
             }
         }
     }
@@ -134,15 +118,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         body.classList.add('no-scroll')
     })
 
-    document.addEventListener('keydown', (e) => {
-        if (e.code == 'Escape') {
-            modalTake.classList.remove('show')
-            body.classList.remove('no-scroll')
-        } else {
-            e.preventDefault()
-        }
-    })
-
     crossTake.addEventListener('click', () => {
         modalTake.classList.remove('show')
         body.classList.remove('no-scroll')
@@ -150,12 +125,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 // Закрытие по пустому месту
 
-    // modalTake.addEventListener('click', function(e) {
-    //     if((!(e.target.parentNode.classList.contains('modal')))) {
-    //         modalTake.classList.remove('show')
-    //         body.classList.remove('no-scroll')
-    //     }
-    // })
+//     modalTake.addEventListener('click', function(e) {
+//         if((!(e.target.parentNode.classList.contains('modal')))) {
+//             modalTake.classList.remove('show')
+//             body.classList.remove('no-scroll')
+//         }
+//     })
 
 // модальное окно Заказать
 
@@ -164,15 +139,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             modalGet.classList.add('show')
             body.classList.add('no-scroll')
         })
-    })
-
-    document.addEventListener('keydown', (e) => {
-        if (e.code == 'Escape') {
-            modalGet.classList.remove('show')
-            body.classList.remove('no-scroll')
-        } else {
-            e.preventDefault()
-        }
     })
 
     crossGet.addEventListener('click', () => {
