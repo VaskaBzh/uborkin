@@ -470,6 +470,10 @@ template {
   padding: 0;
 }
 
+a {
+  outline: none;
+}
+
 h1 {
   margin: 0;
 }
@@ -627,6 +631,9 @@ img {
   text-transform: uppercase;
   text-align: left;
 }
+.hero__title_thanks {
+  font-size: 2.8rem;
+}
 .hero__text {
   max-width: 27.94rem;
   width: 100%;
@@ -635,6 +642,11 @@ img {
   font-size: 1.33rem;
   text-align: left;
   line-height: 1.5rem;
+}
+.hero__text_thanks {
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  margin-top: 20px;
 }
 
 .mobile_on {
@@ -649,6 +661,13 @@ img {
   position: relative;
   padding-top: 9.15rem;
   padding-bottom: 1.6rem;
+}
+.catalog__thanks {
+  background: url(../img/clouds.webp) no-repeat center 0%;
+  background-size: 100%;
+}
+.catalog .col__head {
+  cursor: pointer;
 }
 .catalog .container {
   max-width: 1324px;
@@ -893,12 +912,14 @@ img {
   width: 100%;
   margin: 0 auto;
   margin-bottom: 1.5rem;
+  z-index: 99;
 }
 .footer .logo__img:nth-child(1) {
   margin-bottom: 1rem;
   max-width: 100%;
   width: 100%;
   height: auto;
+  text-align: center;
 }
 .footer .logo__img:nth-child(2) {
   max-width: 100%;
@@ -1099,6 +1120,18 @@ img {
   overflow: hidden;
 }
 
+#thanks {
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.input__hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
 @media screen and (max-width: 1900px) {
   .hero .container::before {
     left: -15%;
@@ -1144,6 +1177,7 @@ img {
 
   .mobile_off {
     display: none;
+    overflow: hidden;
   }
   .mobile_on {
     display: flex;
@@ -1177,6 +1211,10 @@ img {
   }
 }
 @media screen and (max-width: 1024px) {
+  .modal {
+    margin-top: -270px;
+  }
+
   .order .row {
     flex-direction: column;
     align-items: center;
@@ -1213,6 +1251,7 @@ img {
 
   .hero {
     padding: 0;
+    overflow-y: hidden;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1329,11 +1368,17 @@ img {
     font-size: 10px;
   }
 
+  .catalog__thanks {
+    margin-top: -5rem !important;
+    padding-b0ttom: 5rem;
+    padding-top: 5.7rem;
+  }
+
   .modal {
     max-height: 505px;
     max-width: 85%;
     margin-left: -45%;
-    margin-top: -80%;
+    margin-top: -55%;
   }
   .modal__container {
     max-height: 100%;
@@ -1366,6 +1411,9 @@ img {
     margin-top: 1rem;
     padding: 12px 0 14px;
     margin-bottom: 1.8rem;
+  }
+  .modal__form {
+    max-width: 90%;
   }
   .modal label {
     font-size: 1rem;
@@ -1526,7 +1574,7 @@ img {
     margin-top: -3rem;
     padding-top: 2rem;
     background-size: 100%;
-    padding-bottom: 5.5rem;
+    padding-bottom: 7.5rem;
   }
   .order__head {
     font-size: 2rem;
@@ -1541,6 +1589,12 @@ img {
     min-height: 44rem;
     padding: 2rem 2.5rem 0 2.7rem !important;
     margin-bottom: 43px;
+  }
+  .order__card:nth-child(2) {
+    background-size: 71% !important;
+  }
+  .order__card:nth-child(1) {
+    background-size: 80% !important;
   }
   .order__text {
     line-height: 1.6rem;
@@ -1614,5 +1668,17 @@ img {
   .footer__design {
     font-size: 1.2rem;
     margin-top: 4rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .order__card:nth-child(2) {
+    background-size: 83% !important;
+  }
+  .order__card:nth-child(1) {
+    background-size: 90% !important;
+  }
+
+  .modal {
+    margin-top: -80%;
   }
 }

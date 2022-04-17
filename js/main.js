@@ -1,3 +1,5 @@
+'use strict'
+
 document.addEventListener("DOMContentLoaded", function(event) {
     const smoothLinks = document.querySelectorAll('.header a[href^="#"]')
     const modalGet = document.getElementById('get')
@@ -5,11 +7,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const crossTake = document.querySelector('.one')
     const crossGet = document.querySelector('.two')
     const modalOpen = document.querySelector('.hero__button')
+    const modalOpenMobile = document.querySelector('.mobile__button')
+    const modalOpenOrder = document.querySelector('.order__button')
     const links = document.querySelectorAll('.catalog a')
     const body = document.querySelector('body')
     const formGet = document.getElementById('form-get')
     const formTake = document.getElementById('form-take')
-    const phones = document.querySelectorAll('._tel')
+    const linkThanks = document.getElementById('thanks')
+    const linkMain = document.getElementById('main')
+    const propertyInput = document.querySelector('.input__hidden')
+    const logoLink = document.querySelector('.logo')
+    const logoLinkFooter = document.querySelector('#footer-link')
+
+    logoLink.addEventListener('click', () => {linkMain.click()})
+    logoLinkFooter.addEventListener('click', () => {linkMain.click()})
 
 // валидация форм
 
@@ -26,30 +37,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
         let formData = new FormData(formGet)
 
         if (error === 0) {
-            let response = await fetch('sendmain.php', {
+            let response = await fetch('sendmail.php', {
                 method: 'POST', 
                 body: formData
-            })
+            });
             if (response.ok) {
                 let result = await response.json()
                 alert(result.message)
-                formPreview.innerHTML = ''
-                form.reset()
-            } else {
+                formGet.reset()
+                modalGet.classList.remove('show')
+                body.classList.remove('no-scroll')
+                linkThanks.click()
+            }  else {
                 alert('ошибка')
-            }
+            } 
+        } else {
+            alert('Заполните форму')
         }
     }
 
-    function formValidate(formGet) {
+    const formValidate = function (form) {
         let error = 0
-        let formReq = document.querySelectorAll('._req')
+        let formReq = form.querySelectorAll('._req')
 
         for (let index = 0; index < formReq.length; index++) {
             const input = formReq[index]
             formRemoveError(input)
 
-            if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
+            if (input.getAttribute("type") === "checkbox" && input.checked === false) {
                 formAddError(input)
                 error++
             } else if (input.value === '') {
@@ -57,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 error++
             }
         }
+        return error
     }
     function formAddError(input) {
         input.parentElement.classList.add('_error')
@@ -78,42 +94,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
         let formData = new FormData(formTake)
 
         if (error === 0) {
-            let response = await fetch('sendmain.php', {
+            let response = await fetch('sendmail.php', {
                 method: 'POST', 
                 body: formData
-            })
+            });
             if (response.ok) {
                 let result = await response.json()
                 alert(result.message)
-                formPreview.innerHTML = ''
-                form.reset()
+                modalTake.classList.remove('show')
+                body.classList.remove('no-scroll')
+                formTake.reset()
+                linkThanks.click()
             } else {
                 alert('ошибка')
-            }
-        } 
-    }
-
-    function formValidate(formTake) {
-        let error = 0
-        let formReq = document.querySelectorAll('._req')
-
-        for (let index = 0; index < formReq.length; index++) {
-            const input = formReq[index]
-            formRemoveError(input)
-
-            if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
-                formAddError(input)
-                error++
-            } else if (input.value === '') {
-                formAddError(input)
-                error++
-            }
+            } 
+        } else {
+            alert('Заполните форму')
         }
     }
 
 // модальное окно Подобрать Контейнер
 
     modalOpen.addEventListener('click', () => {
+        modalTake.classList.add('show')
+        body.classList.add('no-scroll')
+    })
+    modalOpenOrder.addEventListener('click', () => {
+        modalTake.classList.add('show')
+        body.classList.add('no-scroll')
+    })
+    modalOpenMobile.addEventListener('click', () => {
         modalTake.classList.add('show')
         body.classList.add('no-scroll')
     })
@@ -134,10 +144,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 // модальное окно Заказать
 
-    links.forEach(function(link, index) {
+    links.forEach(function(link) {
         link.addEventListener('click', () => {
             modalGet.classList.add('show')
             body.classList.add('no-scroll')
+            propertyInput.value = link.textContent
         })
     })
 
